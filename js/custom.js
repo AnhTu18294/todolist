@@ -9,22 +9,12 @@ $(document).ready(function(){
   $btnAdd.click(addJobToList);
   $btnDel.click(delListJobsChecked);
 
-  $("#cbTest").change(function(){
-    if($(this).is(":checked")) {
-        $("#tbTest").css('text-decoration','line-through');
-    } 
-  });
-
   function addJobToList(){
     if($tbJob.val() != ""){
         index += 1;
-        $listJobs.append("<li>"+$tbJob.val()+"<input type = 'checkbox' class = 'delete' id = 'check_"+index+"'' /><button id = 'btnDel_"+index+"' >Del</button></li>");
+        $listJobs.append("<li>"+"<input type = 'checkbox' class = 'delete' id = 'check_"+index+"'' />"+$tbJob.val()+"<button id = 'btnDel_"+index+"' >Del</button></li>");
         $("#btnDel_"+index).click(delJob);
-        $("#check_"+index).change(function(){
-            if($(this).is(":checked")) {
-                $(this).parent().css('text-decoration','line-through');
-            } 
-        });
+        $("#check_"+index).change(doneJob);
     }
   };
 
@@ -34,7 +24,9 @@ $(document).ready(function(){
   };
 
   function doneJob(){
-    
+    if($(this).is(":checked")) {
+        $(this).parent().css('text-decoration','line-through');
+    } 
   };
 
   function delListJobsChecked(){
