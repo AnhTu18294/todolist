@@ -1,0 +1,9 @@
+ul.job-list{
+	border-style: double;
+	width: 300px;
+	background-color: rgb(250,250,250);
+}
+h2{
+	text-align: center;
+	color: red;
+}
