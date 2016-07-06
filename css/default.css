@@ -7,3 +7,7 @@ h2{
 	text-align: center;
 	color: red;
 }
+
+.done{
+	text-decoration: line-through;
+}
